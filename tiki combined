@@ -2,13 +2,6 @@
 
 pragma solidity ^0.6.2;
 
-import "./DividendPayingToken.sol";
-import "./SafeMath.sol";
-import "./IterableMapping.sol";
-import "./Ownable.sol";
-import "./IUniswapV2Pair.sol";
-import "./IUniswapV2Factory.sol";
-import "./IUniswapV2Router.sol";
 
 contract TIKI is ERC20, Ownable {
     using SafeMath for uint256;
@@ -707,17 +700,6 @@ contract TIKIDividendTracker is DividendPayingToken, Ownable {
     }
 }
 
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.6.2;
-
-import "./ERC20.sol";
-import "./SafeMath.sol";
-import "./SafeMathUint.sol";
-import "./SafeMathInt.sol";
-import "./DividendPayingTokenInterface.sol";
-import "./DividendPayingTokenOptionalInterface.sol";
-
 
 /// @title Dividend-Paying Token
 /// @author Roger Wu (https://github.com/roger-wu)
@@ -894,9 +876,7 @@ contract DividendPayingToken is ERC20, DividendPayingTokenInterface, DividendPay
   }
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 library SafeMath {
     /**
@@ -1041,8 +1021,7 @@ library SafeMath {
     }
 }
 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.2;
+
 
 library IterableMapping {
     // Iterable mapping from address to uint;
@@ -1105,11 +1084,7 @@ library IterableMapping {
     }
 }
 
-pragma solidity ^0.6.2;
 
-// SPDX-License-Identifier: MIT License
-
-import "./Context.sol";
 
 contract Ownable is Context {
     address private _owner;
@@ -1163,9 +1138,7 @@ contract Ownable is Context {
     }
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 interface IUniswapV2Pair {
     event Approval(address indexed owner, address indexed spender, uint value);
@@ -1218,9 +1191,7 @@ interface IUniswapV2Pair {
     function initialize(address, address) external;
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 interface IUniswapV2Factory {
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
@@ -1238,9 +1209,7 @@ interface IUniswapV2Factory {
     function setFeeToSetter(address) external;
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 interface IUniswapV2Router01 {
     function factory() external pure returns (address);
@@ -1381,14 +1350,6 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.6.2;
-
-import "./IERC20.sol";
-import "./IERC20Metadata.sol";
-import "./Context.sol";
-import "./SafeMath.sol";
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -1692,9 +1653,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     ) internal virtual {}
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 /**
  * @title SafeMathUint
@@ -1735,7 +1694,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-pragma solidity ^0.6.2;
+
 
 /**
  * @title SafeMathInt
@@ -1801,9 +1760,7 @@ library SafeMathInt {
     }
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 
 /// @title Dividend-Paying Token Interface
@@ -1843,10 +1800,6 @@ interface DividendPayingTokenInterface {
   );
 }
 
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.6.2;
-
 
 /// @title Dividend-Paying Token Optional Interface
 /// @author Roger Wu (https://github.com/roger-wu)
@@ -1869,9 +1822,7 @@ interface DividendPayingTokenOptionalInterface {
   function accumulativeDividendOf(address _owner) external view returns(uint256);
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
@@ -1951,11 +1902,6 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.6.2;
-
-import "./IERC20.sol";
 
 /**
  * @dev Interface for the optional metadata functions from the ERC20 standard.
@@ -1979,9 +1925,7 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-// SPDX-License-Identifier: MIT
 
-pragma solidity ^0.6.2;
 
 /*
  * @dev Provides information about the current execution context, including the
@@ -2003,3 +1947,4 @@ abstract contract Context {
         return msg.data;
     }
 }
+
